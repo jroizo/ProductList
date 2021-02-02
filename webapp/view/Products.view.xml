@@ -1,0 +1,56 @@
+<mvc:View controllerName="demoFioriProductList.controller.Products" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<Panel>
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>productListTitle}"/>
+								<ToolbarSpacer/>
+								<SearchField width="50%"
+								             search=".onfilterProducts"
+								             placeholder="{i18n>searchProducts}"/>
+							</Toolbar>
+						</headerToolbar>
+					<Table id="productList" class="sapUiResponsiveMargin" width="auto" items="{ path: 'northwind>/Products' }">
+						<columns>
+							<Column>
+								<Text text="{i18n>columnProductID}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>columnProductName}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>columnSupplierID}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>columnCategoryID}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>columnQuantityPerUnit}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>columnUnitPrice}"/>
+					 		</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectNumber number="{northwind>ProductID}"/>
+									<Text text="{northwind>ProductName}"/>
+								    <ObjectNumber number="{northwind>SupplierID}"/>
+								    <ObjectNumber number="{northwind>CategoryID}"/>
+								    <Text text="{northwind>QuantityPerUnit}"/>
+								    <ObjectNumber number="{northwind>UnitPrice}"/>								    
+								</cells>
+							</ColumnListItem>
+						</items>					
+					</Table>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
